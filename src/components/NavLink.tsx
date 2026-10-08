@@ -9,9 +9,9 @@ interface Navs {
 }
 
 const NavLink = async () => {
-  const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories",
-  );
+  const res = await fetch(`${process.env.BACKEND_URL}/api/bazardor/categories`);
+  // "https://api.api-store.workers.dev/api/bazardor/categories"
+
   const data = await res.json();
   const navs: Navs[] = data;
 
