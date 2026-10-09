@@ -23,7 +23,6 @@ const NavLink = async () => {
             {n.icon} {n.nameBn}
           </Link>
         ))}
-        n
       </div>
     </div>
   );
