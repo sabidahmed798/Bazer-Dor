@@ -16,10 +16,10 @@ const NavLink = async () => {
   const navs: Navs[] = data;
 
   return (
-    <div className="w-full bg-base-200">
+    <div className="w-full bg-base-100">
       <div className="container mx-auto flex gap-5 mt-3  py-4">
         {navs.map((n, i) => (
-          <Link key={i} href={n.id}>
+          <Link key={i} href={`/categories/${n.slug}`}>
             {n.icon} {n.nameBn}
           </Link>
         ))}
