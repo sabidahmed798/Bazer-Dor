@@ -15,7 +15,7 @@ const PriceDownSection = async () => {
     )
     .slice(0, 6);
 
-  console.log("Top 6 Price Down:", products);
+  // console.log("Top 6 Price Down:", products);
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-8">

@@ -55,11 +55,6 @@ const PriceUpSection = async () => {
                 {/* Product Image */}
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f0f5f1]">
                   {product.image}
-                  {/* <Image
-                    src={product.image}
-                    alt={product.nameBn}
-                    className="h-8 w-8 object-contain"
-                  /> */}
                 </div>
 
                 {/* Name */}

@@ -1,6 +1,6 @@
 import AllProducts from "@/components/AllProducts";
 import Banner from "@/components/Banner";
-import Marquee from "@/components/Marquee";
+// import Marquee from "@/components/Marquee";
 import PriceDownSection from "@/components/PriceDownSection";
 import PriceUpSection from "@/components/PriceUpSection";
 
@@ -9,7 +9,7 @@ export default async function Home() {
   const data = await res.json();
   // const headlines: Headlines[] = data;
   const allproduct = data;
-  console.log("all product", allproduct);
+
   return (
     <div>
       <Banner />
