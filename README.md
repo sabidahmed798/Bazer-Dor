@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 BazarDor 
 
-## Getting Started
+### Essential Market Prices at a Glance
 
-First, run the development server:
+**BazarDor** is a modern, responsive web application designed to help people explore and compare essential commodity prices across different markets in Bangladesh. It provides an intuitive interface for tracking price changes, browsing product categories, and accessing detailed market-wise pricing information.
+
+[**🌐 Live Demo**](https://vercel.com/) 
+[**💻 GitHub Repository**](https://github.com/)
+
+---
+
+## ✨ Key Features
+
+- **📱 Fully Responsive UI** — Optimized for mobile, tablet, laptop, and desktop screens.
+- **📈 Daily Price Tracking** — Explore products with rising and falling prices, including percentage changes and visual indicators.
+- **🛍️ Product Listings & Details** — Browse essential commodities and compare minimum, maximum, average, and market-wise prices.
+- **🗂️ Category-Based Navigation** — Explore products by category and sort them by price in ascending or descending order.
+- **🔐 Authentication with Better Auth** — Register and sign in using email/password and configured Google or GitHub social login.
+- **⚡ Skeleton Loading States** — Improve the browsing experience while product data is loading.
+- **🔔 Interactive Toast Notifications** — Display helpful success, error, and validation messages.
+- **📊 Scrolling Price Ticker** — View commodity prices and price-change indicators in a continuously scrolling strip.
+- **🧭 Dynamic Routing** — Navigate between the homepage, categories, and product detail pages.
+- **🛡️ Protected Product Details** — Restrict detailed market information to authenticated users.
+- **🚫 Custom 404 Page** — Provide a friendly error page with an easy way to return home.
+- **🚀 Production Deployment** — Hosted on Vercel with support for direct access to dynamic routes.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js | Application development and UI rendering |
+| Next.js App Router | File-based routing, layouts, and navigation |
+| TypeScript / JavaScript | Application logic and type safety |
+| Tailwind CSS | Responsive styling and layout |
+| DaisyUI | Reusable UI components and styling |
+| Better Auth | Authentication and session management |
+| MongoDB | Database for authentication and configured application data |
+| Google OAuth | Google sign-in |
+| GitHub OAuth | GitHub sign-in |
+| React Hot Toast | Toast notifications and user feedback |
+| Git & GitHub | Version control and source code management |
+| Vercel | Deployment and hosting |
+
+---
+
+## 🖥️ Application Pages
+
+| Route | Description |
+|---|---|
+| `/` | Homepage with hero banner, price trends, and all products |
+| `/categories/[categoryId]` | Category-based product browsing and price sorting |
+| `/product/[slug]` | Protected product details and market-wise price comparison |
+| `/signin` | User login with email/password and social authentication |
+| `/signup` | User registration and account creation |
+| Custom 404 | Friendly error page for invalid routes |
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run BazarDor locally.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- npm, pnpm, or yarn
+- A MongoDB database, if required by your configuration
+- OAuth credentials for the social login providers you enable
+
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Navigate to the Project
+
+```bash
+cd bazardor
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env.local` file in the project root and add the variables required by your application.
+
+```env
+BACKEND_URL=YOUR_BACKEND_URL
+MONGODB_URL=YOUR_MONGODB_CONNECTION_STRING
+BETTER_AUTH_SECRET=YOUR_AUTH_SECRET
+BETTER_AUTH_URL=http://localhost:3000
+
+GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET=YOUR_GOOGLE_CLIENT_SECRET
+
+GITHUB_CLIENT_ID=YOUR_GITHUB_CLIENT_ID
+GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET
+```
+
+**Important:** Use the exact environment variable names expected by your code. Configure only the providers and services you actually use. Never commit secrets or private credentials to GitHub.
+
+### 5. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 6. Open the Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📱 Responsive Design
 
-To learn more about Next.js, take a look at the following resources:
+BazarDor is designed to deliver a consistent experience across different screen sizes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Mobile:** Compact navigation, readable product cards, and stacked layouts.
+- **Tablet:** Adaptive grids and flexible spacing.
+- **Desktop:** Wider product grids, spacious layouts, and organized market information.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The interface uses responsive layouts and reusable components to keep the application accessible and easy to navigate.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔒 Authentication & Security
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+BazarDor uses Better Auth to support user authentication.
+
+- Email and password registration and login.
+- Google and GitHub sign-in when configured.
+- Authentication-aware navigation.
+- Protected product detail pages.
+- User-friendly authentication and validation feedback.
+- Environment variables for sensitive configuration.
+
+Social authentication requires valid provider credentials and correctly configured callback URLs.
+
+---
+
+## 🌐 Deployment
+
+The application is deployed on **Vercel**.
+
+Before deploying a new version, verify the production build:
+
+```bash
+npm run build
+```
+
+Then check the following:
+
+- Required environment variables are configured in Vercel.
+- Authentication and OAuth callback URLs use the correct production domain.
+- Product and category APIs return valid data.
+- Login, registration, logout, and protected routes work correctly.
+- Dynamic routes load correctly when opened directly or refreshed.
+- No build errors or critical runtime errors remain.
+
+---
+
+## 🎯 Project Objective
+
+The goal of BazarDor is to make essential commodity prices easier to explore and compare. By presenting product information, price movements, and market-wise comparisons in a user-friendly interface, the application helps users make more informed shopping decisions.
+
+---
+
+## 👨‍💻 Developer
+
+**Sabid Ahmed**
+
+Full Stack Web Development Learner
+
+---
+
