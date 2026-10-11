@@ -1,6 +1,7 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
@@ -127,15 +128,18 @@ const SignInPage = () => {
 
       <p className="mt-4 text-xs text-gray-600">
         অ্যাকাউন্ট নেই?{" "}
-        <span className="cursor-pointer font-medium text-[#05893e]">
-          সাইন আপ করুন
-        </span>
+        <Link href="/signup">
+          <span className="cursor-pointer font-medium text-[#05893e]">
+            সাইন আপ করুন
+          </span>
+        </Link>
       </p>
 
       <p className="mt-5 text-xs text-gray-500">
-        <a href={"/"} className="transition hover:text-[#05893e]">
-          ← হোম পেজে ফিরে যান
-        </a>
+        <Link href="/">
+          {" "}
+          <p className="transition hover:text-[#05893e]">← হোম পেজে ফিরে যান</p>
+        </Link>
       </p>
     </div>
   );
